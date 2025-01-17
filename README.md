@@ -28,6 +28,12 @@ Error Handling: Graceful error handling, with appropriate feedback to users when
 State Management: Clear separation of concerns using ViewModels to manage UI state.
 Unit Testing: Comprehensive tests to ensure reliability and maintainability.
 
+
+![UserListing](https://github.com/user-attachments/assets/ac7821ae-95ea-49ed-a13b-940a6f37a23b)
+
+
+![UserDetails](https://github.com/user-attachments/assets/189707d1-a8e1-49ad-ad44-5ec50f373c85)
+
 # Architecture
 The project follows the Clean Architecture pattern, with the following layers:
 
@@ -73,6 +79,11 @@ SPM Dependencies such as ViewInspector and SnapshotTesting have been used in tes
 
 # Testing
 The project includes tests for Data Service, Repositories, Use Cases, ViewModels and Views ensuring reliability, coverage and robustness.
+
+Code coverage:
+
+Code coverage achieved for UserSphere app is 93.8%
+<img width="772" alt="Coverage" src="https://github.com/user-attachments/assets/8bc3bec5-342b-4988-85e4-bc47e9993771" />
 
 To run the tests:
 Open the project in Xcode.
