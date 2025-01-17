@@ -16,14 +16,16 @@ The User Sphere App is designed to demonstrate modern iOS development practices,
 
 The app consists of two main screens:
 
-User List Screen: Displays a list of users, fetched from a remote API, and shows basic information like names and email addresses.
-User Detail Screen: Displays detailed information about a user, including their address, phone number, and image.
+Users Listing Screen: Displays a list of users, fetched from a remote API, and shows basic information like names and email addresses.
+
+User Details Screen: Displays detailed information about a user, including their name, email, address, phone number, country and image.
+
 The data is fetched from a remote API (a sample API in this case) and follows best practices like caching images and handling  errors.
 
 # Features
 User List Screen: Displays a list of users with their first name, last name, and email address.
 
-User Detail Screen: Shows more detailed information about a user, including phone number, address, country, and profile picture.
+User Detail Screen: Shows more detailed information about a user, including name, email, phone number, address, country, and profile picture.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6e03e681-b556-432d-9915-1d9c9b357b5b" width="45%" style="border: 2px solid #ddd; border-radius: 8px; padding: 5px; margin-right: 15px;">
