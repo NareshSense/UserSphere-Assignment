@@ -9,8 +9,7 @@ This is a SwiftUI-based project that demonstrates a User App featuring a User Li
 3. Architecture
 4. Installation
 5. Usage
-6. Key Folder and Files
-7. Testing
+6. Testing
 
 # Overview
 The User Sphere App is designed to demonstrate modern iOS development practices, focusing on Clean Architecture to separate concerns and ensure maintainability.
@@ -19,7 +18,7 @@ The app consists of two main screens:
 
 User List Screen: Displays a list of users, fetched from a remote API, and shows basic information like names and email addresses.
 User Detail Screen: Displays detailed information about a user, including their address, phone number, and image.
-The data is fetched from a remote API (a mock API in this case) and follows best practices like caching images and handling  errors.
+The data is fetched from a remote API (a sample API in this case) and follows best practices like caching images and handling  errors.
 
 # Features
 User List Screen: Displays a list of users with their first name, last name, and email address.
@@ -28,8 +27,8 @@ Image Caching: Cached images for user profiles to improve performance and avoid 
 Error Handling: Graceful error handling, with appropriate feedback to users when there are issues fetching data.
 State Management: Clear separation of concerns using ViewModels to manage UI state.
 Unit Testing: Comprehensive tests to ensure reliability and maintainability.
-Architecture
 
+# Architecture
 The project follows the Clean Architecture pattern, with the following layers:
 
 Presentation Layer:
@@ -39,13 +38,14 @@ ViewModels: UsersViewModel and UserDetailViewModel manage the data and business 
 Domain Layer:
 Entities: User is the core data model representing a user.
 UseCases: Handles the business logic for interacting with the user repository.
-
-Repositories: UserRepository is responsible for fetching user data, either from the network or from a local cache.
+Repository protocol: UserRepository is responsible for fetching user data, either from the network or from a local cache.
 
 Data Layer:
-API Layer: Makes network requests using UserDataServiceProtocol and handles the API response.
-Cache: A custom ImageCache class is used to cache user images for efficient network usage and improved app performance.
-The code uses Combine for reactive programming and asynchronous data flow.
+DataService: Makes network requests using UserDataServiceProtocol and handles the API response.
+Repository implementation: Contains implementation of UserRepository protocol 
+Data Models: API response is mapped to data model
+
+The code uses Combine for reactive programming, asynchronous data flow and Swift UI for User Interface
 
 # Installation
 To get started with the project, follow these steps:
@@ -66,22 +66,13 @@ Tapping on a user will navigate to the User Detail Screen.
 This screen shows detailed information about the user, such as their phone number, address, country, and profile picture (if available).
 You can interact with the app like a typical user, and the data will be loaded asynchronously from the API.
 
-# Key folder and files
-Views: Contains all SwiftUI views that make up the user interface.
-ViewModels: Contains the business logic for each screen (e.g., fetching users, managing states).
-Models: Contains the core data models like User.
-Services: Contains the API service and image cache for network calls and local caching.
-Repositories: Handles data fetching from various sources (e.g., API, cache).
-Tests: Contains unit tests for repositories, view models, and UI components.
+# Dependencies 
+SPM Dependencies such as ViewInspector and SnapshotTesting have been used in testing target to support inspectable views and snapshots
 
 # Testing
-The project includes unit tests for both ViewModels and Repositories, ensuring reliability and robustness. The tests include coverage for:
-
-Fetching data from the API.
-Transitions and UI updates in UserListView and UserDetailView.
+The project includes tests for Data Service, Repositories, Use Cases, ViewModels and Views ensuring reliability and robustness. 
 
 To run the tests:
-
 Open the project in Xcode.
 Select Product > Test from the Xcode menu or press Cmd + U.
 Xcode will run the tests, and you can view the results in the Test Navigator.
