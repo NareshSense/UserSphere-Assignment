@@ -22,17 +22,13 @@ The data is fetched from a remote API (a sample API in this case) and follows be
 
 # Features
 User List Screen: Displays a list of users with their first name, last name, and email address.
-User Detail Screen: Shows more detailed information about a user, including phone number, address, country, and an optional profile picture.
-Image Caching: Cached images for user profiles to improve performance and avoid unnecessary network requests.
-Error Handling: Graceful error handling, with appropriate feedback to users when there are issues fetching data.
-State Management: Clear separation of concerns using ViewModels to manage UI state.
-Unit Testing: Comprehensive tests to ensure reliability and maintainability.
 
+User Detail Screen: Shows more detailed information about a user, including phone number, address, country, and profile picture.
 
-![UserListing](https://github.com/user-attachments/assets/ac7821ae-95ea-49ed-a13b-940a6f37a23b)
-
-
-![UserDetails](https://github.com/user-attachments/assets/189707d1-a8e1-49ad-ad44-5ec50f373c85)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6e03e681-b556-432d-9915-1d9c9b357b5b" width="45%" style="border: 2px solid #ddd; border-radius: 8px; padding: 5px; margin-right: 15px;">
+  <img src="https://github.com/user-attachments/assets/44679103-57be-4581-8eca-acb644afbade" width="45%" style="border: 2px solid #ddd; border-radius: 8px; padding: 5px;">
+</p>
 
 # Architecture
 The project follows the Clean Architecture pattern, with the following layers:
@@ -83,6 +79,7 @@ The project includes tests for Data Service, Repositories, Use Cases, ViewModels
 Code coverage:
 
 Code coverage achieved for UserSphere app is 93.8%
+
 <img width="772" alt="Coverage" src="https://github.com/user-attachments/assets/8bc3bec5-342b-4988-85e4-bc47e9993771" />
 
 To run the tests:
