@@ -1,5 +1,4 @@
 
-
 # User Sphere app
 This is a SwiftUI-based project that demonstrates a User App featuring a User List Screen and User Detail Screen. The project follows Clean Architecture principles and provides a scalable, maintainable, and testable codebase.
 
@@ -9,7 +8,8 @@ This is a SwiftUI-based project that demonstrates a User App featuring a User Li
 3. Architecture
 4. Installation
 5. Usage
-6. Testing
+6. Dependencies
+7. Testing
 
 # Overview
 The User Sphere App is designed to demonstrate modern iOS development practices, focusing on Clean Architecture to separate concerns and ensure maintainability.
@@ -36,16 +36,18 @@ Views: UserListView and UserDetailView are SwiftUI views that display the user i
 ViewModels: UsersViewModel and UserDetailViewModel manage the data and business logic required by the views.
 
 Domain Layer:
-Entities: User is the core data model representing a user.
+Entities: User is the core data model representing a user entity. Once created should not be changed ideally.
 UseCases: Handles the business logic for interacting with the user repository.
-Repository protocol: UserRepository is responsible for fetching user data, either from the network or from a local cache.
+Repository protocol: UserRepository is responsible for fetching user data from data service and provide to use case.
 
 Data Layer:
-DataService: Makes network requests using UserDataServiceProtocol and handles the API response.
-Repository implementation: Contains implementation of UserRepository protocol 
-Data Models: API response is mapped to data model
+DataService: Implements UserDataServiceProtocol, interacts with the network client and gets user data.
+Repository: Contains implementation of UserRepository protocol, Mappers used here to convert data models to entity.
+Data Models: API response from network client is mapped to data model.
 
-The code uses Combine for reactive programming, asynchronous data flow and Swift UI for User Interface
+Network client class is responsible for API interactions.
+
+The code uses Combine for reactive programming, asynchronous data flow and Swift UI for User Interface.
 
 # Installation
 To get started with the project, follow these steps:
@@ -70,14 +72,9 @@ You can interact with the app like a typical user, and the data will be loaded a
 SPM Dependencies such as ViewInspector and SnapshotTesting have been used in testing target to support inspectable views and snapshots
 
 # Testing
-The project includes tests for Data Service, Repositories, Use Cases, ViewModels and Views ensuring reliability and robustness. 
+The project includes tests for Data Service, Repositories, Use Cases, ViewModels and Views ensuring reliability, coverage and robustness.
 
 To run the tests:
 Open the project in Xcode.
 Select Product > Test from the Xcode menu or press Cmd + U.
 Xcode will run the tests, and you can view the results in the Test Navigator.
-
-
-
-
-
