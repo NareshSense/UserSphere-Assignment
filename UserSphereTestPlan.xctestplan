@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "7A923C8E-86F2-44AA-9D82-CC0510135E41",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:UserSphere.xcodeproj",
+        "identifier" : "0C0C662D2D0E2F60004DF47C",
+        "name" : "UserSphereTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:UserSphere.xcodeproj",
+        "identifier" : "0C0C66372D0E2F60004DF47C",
+        "name" : "UserSphereUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
